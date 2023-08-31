@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geração de cartões</title>
+    <script>
+function gerarPlus(){
+let cartao = "";
+let numerosCartao = []
+let limite =  parseInt(f.limite.value);
+let qtde = parseInt(f.qtde_cartoes.value);
+for(let a=1; a<=qtde; a++){
+    //gerando um cartão contendo 6 números
+for(let i=0; i<=6 ; i++){        
+let n = parseInt(Math.random() * limite);
+//permanece o laço enquanto o número gerado existe no array
+while(numerosCartao.includes(n)){
+    n = parseInt(Math.random() * limite);
+    
+}
+//console.log(n);
+numerosCartao.push(n);
+}
+cartao += numerosCartao.sort(function(a,b){return a-b}) + "\n________________\n";
+numerosCartao = [];
+document.getElementById("numeros").value = cartao;
+//console.log(numerosCartao)
+}
+}
+</script>
+</head>
+<body>
+<form name="f">
+<textarea id="numeros" rows="20" cols="40"></textarea><br>
+Limite: <input type="number" size="2" name="limite" value="60"><br><br>
+Qtde de cartões: <input type="number" name="qtde_cartoes" value="1"><br><br>
+<input type="button" value="Gerar Cartão" onclick="gerar()">
+<input type="button" value="Gerar Cartão Sem Repetição" onclick="gerarPlus()">
+<input type="reset" value="limpar">
+</form>
+</body>
+</html>

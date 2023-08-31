@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interagindo com DIVs</title>
+        <script>
+
+function montaTabuleiro(hor, ver){
+  const divColorida = "<div style=\"display: table-cell; width: 30px; height: 30px; background: white;\"></div>"
+   const divBranca = "<div style=\"display: table-cell; width: 30px; height: 30px; background: black;\"></div>"
+   let tabuleiro = "";
+   for(i=0; i<ver;i++){
+     for(j=0; j<hor; j++){
+       if( (i+j)  % 2 == 0 ){
+         tabuleiro += divColorida;
+        } else {
+          tabuleiro += divBranca;
+        }
+      }
+      tabuleiro+= "<br />"
+    }
+    document.getElementById("meuExercicio").innerHTML = tabuleiro;
+  }
+ 
+  </script>
+  </head>
+  <body>
+        <button onclick="verificar()">Ver</button><br /><br />
+
+
+    <div id="meuExercicio"></div>
+  </body>
+  </html>
+
+  

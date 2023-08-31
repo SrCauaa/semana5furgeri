@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geração de cartões</title>
+    <script>
+        function gerar(){
+            let s="";
+            let qtde = parseInt(f.qtde.value);
+                for(let i=1; i<=qtde; i++){
+                    let n = parseInt(Math.random() * 10); 
+                    s += n;
+                }
+                document.getElementById('numeros').value = s;
+            }
+            
+    </script>
+</head>
+<body>
+    <form name="f">
+        <textarea id="numeros" cols="40" rows="20"></textarea><br>
+        Qtde de cartões<input type="number" name="qtde" value="1"><br><br>
+        <input type="button" value="Gerar cartão" onclick="gerar()">
+        <input type="reset" value="limpar">
+
+    </form>
+</body>
+</html>
